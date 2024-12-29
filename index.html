@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>James Antony Raj Portfolio</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #000000;
+      overflow-x: hidden;
+      background-image: url(images/bg_1.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+    }
+
+    .portfolio-container {
+      position: relative;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      background: #55d3f3;
+      border-radius: 20px;
+      text-align: center;
+      
+      box-shadow: 0 0 5px 0;
+            background: inherit;
+            backdrop-filter: blur(10px);
+    }
+
+    .portfolio-container:hover {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      z-index: -1;
+      background: linear-gradient(45deg, #05ee1125, #5efafa53, #bdf92423, #7cf5761f, #d5f17164);
+      background-size: 300% 300%;
+      border-radius: 20px;
+      animation: gradient-border-radius 6s infinite;
+    }
+
+    @keyframes gradient-border-radius {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .profile-picture-main {
+      width: 180px;
+      height: 180px;
+      border-radius: 3%;
+      margin: 0 auto 20px;
+      border: 5px solid #00ffff;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+      animation: neon-border 1.5s infinite alternate;
+    }
+
+    .profile-pictures{
+      display: flex; 
+      gap: 50px; 
+      justify-content: center; 
+      align-items: center;
+    }
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 3%;
+      margin-bottom: 20px;
+      border: 1px solid #fff;
+    }
+
+    .portfolio-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 
+       -5px -1px 0 #00fff781, /* Top-left shadow */
+       1px -1px 0 #00fff781,  /* Top-right shadow */
+       -5px 1px 0 #00fff781,  /* Bottom-left shadow */
+       1px 1px 0 #00fff781;   /* Bottom-right shadow */
+    }
+
+    .portfolio-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-links a {
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .portfolio-links a.be-cse { background: #007bff; }
+    .portfolio-links a.be-cse:hover { background: #c3ff00; }
+    .portfolio-links a.clinical { background: #28a745; }
+    .portfolio-links a.clinical:hover { background: #ff7700; }
+
+    .certification-slider {
+      position: relative;
+      width: 80%;
+      left: 40px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .certification-slider img {
+      width: 100%;
+      display: none;
+      opacity: 0;
+      transform: translateX(100%);
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .certification-slider img.active {
+      display: block;
+      animation-name: wipe-in;
+    }
+
+    @keyframes wipe-in {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes neon-border {
+      from {
+        border-color: #00ffff;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+      }
+      to {
+        border-color: #ff007f;
+        box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #333;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    /* Unique Border Colors for Each Certificate */
+    .cert1 {
+      border: 5px solid #eebdd5;
+    }
+
+    .cert2 {
+      border: 5px solid #00ffff;
+    }
+
+    .cert3 {
+      border: 5px solid #ffbf00;
+    }
+
+    .cert4 {
+      border: 5px solid #8a2be2;
+    }
+
+    .cert5 {
+      border: 5px solid #aa3d3d;
+    }
+
+    .cert6 {
+      border: 5px solid #00ff22;
+    }
+
+    .cert7 {
+      border: 5px solid #5093f8;
+    }
+
+    .cert8 {
+      border: 5px solid #2d146c;
+    }
+
+    .cert9 {
+      border: 5px solid #eab88c;
+    }
+
+    .cert10 {
+      border: 5px solid #abcba4;
+    }
+
+    .cert11 {
+      border: 5px solid #6bc3ec;
+    }
+
+    .cert9 {
+      border: 5px solid #e43cf0;
+    }
+
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .download-btn {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00ffff;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .download-btn:hover {
+      background-color: #ff007f;
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-container">
+    <img src="certificates/profile.jpg" alt="Main Profile Picture" class="profile-picture-main">
+    <h1 class="portfolio-title">James Antony Raj Portfolio's</h1>
+
+    <!-- Moved images above the portfolio links -->
+    <div class="profile-pictures">
+      <a href="BE-CSE.html" target="_blank">
+      <img src="certificates/cse.jpg" alt="BE-CSE Profile Picture" class="profile-picture" id="cse-picture">
+      </a>  
+      
+      <a href="clinical-research.html" target="_blank">
+      <img src="certificates/Statistical.jpg" alt="Clinical Research Picture" class="profile-picture" id="clinical-picture">
+      </a>
+    
+    </div>
+
+    <div class="portfolio-links">
+      <a href="BE-CSE.html" class="be-cse" target="_blank">BE-CSE Profile</a>
+      <a href="clinical-research.html" class="clinical" target="_blank">Clinical Research Profile</a>
+    </div>
+
+    <div class="certification-slider">
+      <div class="arrow left">&lt;</div>
+      <div class="arrow right">&gt;</div>
+      <img src="certificates/cert1.jpg" alt="Certification 1" class="active cert1" onclick="openModal(this)">
+      <img src="certificates/cert2.jpg" alt="Certification 2" class="cert2" onclick="openModal(this)">
+      <img src="certificates/cert3.jpg" alt="Certification 3" class="cert3" onclick="openModal(this)">
+      <img src="certificates/cert4.jpg" alt="Certification 4" class="cert4" onclick="openModal(this)">
+      <img src="certificates/cert5.jpg" alt="Certification 5" class="cert5" onclick="openModal(this)">
+      <img src="certificates/cert6.jpg" alt="Certification 6" class="cert6" onclick="openModal(this)">
+      <img src="certificates/cert7.jpg" alt="Certification 7" class="cert7" onclick="openModal(this)">
+      <img src="certificates/cert8.jpg" alt="Certification 8" class="cert8" onclick="openModal(this)">
+      <img src="certificates/cert9.jpg" alt="Certification 9" class="cert9" onclick="openModal(this)">
+      <img src="certificates/cert10.jpg" alt="Certification 10" class="cert10" onclick="openModal(this)">
+      <img src="certificates/cert11.jpg" alt="Certification 11" class="cert11" onclick="openModal(this)">
+      <img src="certificates/cert12.jpg" alt="Certification 12" class="cert12" onclick="openModal(this)">
+    </div>
+  </div>
+
+  <!-- Modal for Large Image View -->
+  <div id="certModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a href="#" id="downloadLink" class="download-btn" download>Download Certificate</a>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.certification-slider img');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'outgoing');
+        if (i === currentIndex) {
+          slide.classList.add('outgoing');
+        }
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      const previousIndex = currentIndex;
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[previousIndex].classList.add('outgoing');
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      const previousIndex = currentIndex;
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      slides[previousIndex].classList.add('outgoing');
+      showSlide(currentIndex);
+    }
+
+    leftArrow.addEventListener('click', prevSlide);
+    rightArrow.addEventListener('click', nextSlide);
+
+    // Custom interval for all slides with the same duration
+    setInterval(() => { nextSlide(); }, 5000); // Set the same interval for all slides
+
+    // Modal functionality
+    function openModal(imgElement) {
+      const modal = document.getElementById("certModal");
+      const modalImg = document.getElementById("modalImage");
+      const downloadLink = document.getElementById("downloadLink");
+
+      modal.style.display = "block";
+      modalImg.src = imgElement.src;
+      downloadLink.href = imgElement.src; // Set download link to the image source
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("certModal");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
